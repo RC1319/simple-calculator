@@ -28,9 +28,10 @@ The project performs basic arithmetic operations and demonstrates DOM manipulati
 ## 📸 Screenshots
 
 ### Desktop View
-<img src="IMAGE_LINK_1" width="800">
+<img src="image.png" width="800">
+
 ### Mobile View
-<img src="IMAGE_LINK_2" width="400">
+<img src="image.png" width="400">
 
 ## 📌 Learning Outcomes
 - DOM manipulation using JavaScript
