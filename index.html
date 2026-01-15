@@ -127,7 +127,7 @@
             <button class="number" onclick="appendNumber('1')">1</button>
             <button class="number" onclick="appendNumber('2')">2</button>
             <button class="number" onclick="appendNumber('3')">3</button>
-            <button class="operator" onclick="appendOperator('.')" style="grid-column: span 1;">.</button>
+            <button class="operator" onclick="appendDecimal()" style="grid-column: span 1;">.</button>
 
             <button class="number" onclick="appendNumber('0')" style="grid-column: span 2;">0</button>
             <button class="equals" onclick="calculate()">=</button>
@@ -143,6 +143,12 @@
 
         function updateDisplay() {
             display.textContent = currentInput;
+        }
+        function appendDecimal() {
+            if (!currentInput.includes('.')) {
+                 currentInput += '.';
+            updateDisplay();
+            }
         }
 
         function appendNumber(num) {
