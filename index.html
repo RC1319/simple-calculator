@@ -144,12 +144,19 @@
         function updateDisplay() {
             display.textContent = currentInput;
         }
+
         function appendDecimal() {
-            if (!currentInput.includes('.')) {
-                 currentInput += '.';
-            }
-            updateDisplay();  
-        }
+    // If we just finished a math problem, start fresh with "0."
+    if (shouldResetDisplay) {
+        currentInput = '0.';
+        shouldResetDisplay = false;
+    } else if (!currentInput.includes('.')) {
+        // Otherwise, just add the dot if it's not there
+        currentInput += '.';
+    }
+    
+    updateDisplay();
+}
 
         function appendNumber(num) {
             if (shouldResetDisplay) {
