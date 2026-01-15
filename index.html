@@ -158,21 +158,15 @@
     updateDisplay();
 }
 
-        function appendNumber(num) {
-            if (shouldResetDisplay) {
-                currentInput = num;
-                shouldResetDisplay = false;
-            } else {
-                if (currentInput === '0' && num !== '.') {
-                    currentInput = num;
-                } else if (num === '.' && currentInput.includes('.')) {
-                    return;
-                } else {
-                    currentInput += num;
-                }
-            }
-            updateDisplay();
-        }
+      function appendNumber(num) {
+    if (currentInput === '0' || shouldResetDisplay) {
+        currentInput = num;
+        shouldResetDisplay = false;
+    } else {
+        currentInput += num;
+    }
+    updateDisplay();
+}
 
         function appendOperator(op) {
             if (operator !== null && !shouldResetDisplay) {
